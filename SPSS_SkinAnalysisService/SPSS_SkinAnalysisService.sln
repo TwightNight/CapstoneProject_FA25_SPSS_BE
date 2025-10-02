@@ -3,14 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.13.35931.197
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SPSS.Api", "SPSS.Api\SPSS.Api.csproj", "{EE2AAE9A-AD5D-08AC-B581-EEDB77B15B16}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SPSS.Repository", "SPSS.Repository\SPSS.Repository.csproj", "{D4AB8967-77FB-D619-9428-8EBC711B3E48}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SPSS.Service", "SPSS.Service\SPSS.Service.csproj", "{1CA3E360-2CE9-AABB-2E30-D194D8D91D7D}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SPSS.Shared", "SPSS.Shared\SPSS.Shared.csproj", "{1DEDDDB8-AC33-E70F-0F5D-26139210ECD6}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SPSS.BusinessObject", "SPSS.BusinessObject\SPSS.BusinessObject.csproj", "{E4C3681C-B812-E54E-9881-A11C59B875CD}"
 EndProject
 Global
@@ -19,22 +11,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{EE2AAE9A-AD5D-08AC-B581-EEDB77B15B16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EE2AAE9A-AD5D-08AC-B581-EEDB77B15B16}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EE2AAE9A-AD5D-08AC-B581-EEDB77B15B16}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EE2AAE9A-AD5D-08AC-B581-EEDB77B15B16}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D4AB8967-77FB-D619-9428-8EBC711B3E48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D4AB8967-77FB-D619-9428-8EBC711B3E48}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D4AB8967-77FB-D619-9428-8EBC711B3E48}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D4AB8967-77FB-D619-9428-8EBC711B3E48}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1CA3E360-2CE9-AABB-2E30-D194D8D91D7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1CA3E360-2CE9-AABB-2E30-D194D8D91D7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1CA3E360-2CE9-AABB-2E30-D194D8D91D7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1CA3E360-2CE9-AABB-2E30-D194D8D91D7D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1DEDDDB8-AC33-E70F-0F5D-26139210ECD6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1DEDDDB8-AC33-E70F-0F5D-26139210ECD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1DEDDDB8-AC33-E70F-0F5D-26139210ECD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1DEDDDB8-AC33-E70F-0F5D-26139210ECD6}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E4C3681C-B812-E54E-9881-A11C59B875CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E4C3681C-B812-E54E-9881-A11C59B875CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E4C3681C-B812-E54E-9881-A11C59B875CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
