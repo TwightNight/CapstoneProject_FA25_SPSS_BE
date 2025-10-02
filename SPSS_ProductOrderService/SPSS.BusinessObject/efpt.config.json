@@ -1,6 +1,6 @@
 ﻿{
    "CodeGenerationMode": 4,
-   "ContextClassName": "UserDBContext",
+   "ContextClassName": "ProductOrderDBContext",
    "ContextNamespace": null,
    "FilterSchemas": false,
    "IncludeConnectionString": true,
@@ -16,19 +16,15 @@
    "T4TemplatePath": null,
    "Tables": [
       {
-         "Name": "[dbo].[Addresses]",
+         "Name": "[dbo].[Brands]",
          "ObjectType": 0
       },
       {
-         "Name": "[dbo].[Blogs]",
+         "Name": "[dbo].[CancelReasons]",
          "ObjectType": 0
       },
       {
-         "Name": "[dbo].[BlogSections]",
-         "ObjectType": 0
-      },
-      {
-         "Name": "[dbo].[ChatHistories]",
+         "Name": "[dbo].[CartItems]",
          "ObjectType": 0
       },
       {
@@ -36,35 +32,55 @@
          "ObjectType": 0
       },
       {
-         "Name": "[dbo].[RefreshTokens]",
+         "Name": "[dbo].[OrderDetails]",
          "ObjectType": 0
       },
       {
-         "Name": "[dbo].[Replies]",
+         "Name": "[dbo].[Orders]",
          "ObjectType": 0
       },
       {
-         "Name": "[dbo].[ReviewImages]",
+         "Name": "[dbo].[PaymentMethods]",
          "ObjectType": 0
       },
       {
-         "Name": "[dbo].[Reviews]",
+         "Name": "[dbo].[ProductCategories]",
          "ObjectType": 0
       },
       {
-         "Name": "[dbo].[Roles]",
+         "Name": "[dbo].[ProductConfigurations]",
          "ObjectType": 0
       },
       {
-         "Name": "[dbo].[SkinTypes]",
+         "Name": "[dbo].[ProductImages]",
          "ObjectType": 0
       },
       {
-         "Name": "[dbo].[Transactions]",
+         "Name": "[dbo].[ProductItems]",
          "ObjectType": 0
       },
       {
-         "Name": "[dbo].[Users]",
+         "Name": "[dbo].[Products]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[ProductStatuses]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[StatusChanges]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[VariationOptions]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Variations]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Vouchers]",
          "ObjectType": 0
       }
    ],

@@ -8,19 +8,18 @@ using Microsoft.EntityFrameworkCore;
 
 namespace SPSS.BusinessObject.Models;
 
-[Index("ReviewId", Name = "IX_ReviewImages_ReviewId")]
-public partial class ReviewImage
+[Index("ProductId", Name = "IX_ProductForSkinTypes_ProductId")]
+[Index("SkinTypeId", Name = "IX_ProductForSkinTypes_SkinTypeId")]
+public partial class ProductForSkinType
 {
     [Key]
     public Guid Id { get; set; }
 
-    public Guid ReviewId { get; set; }
+    public Guid ProductId { get; set; }
 
-    [Required]
-    [StringLength(1000)]
-    public string ImageUrl { get; set; }
+    public Guid SkinTypeId { get; set; }
 
-    [ForeignKey("ReviewId")]
-    [InverseProperty("ReviewImages")]
-    public virtual Review Review { get; set; }
+    [ForeignKey("SkinTypeId")]
+    [InverseProperty("ProductForSkinTypes")]
+    public virtual SkinType SkinType { get; set; }
 }

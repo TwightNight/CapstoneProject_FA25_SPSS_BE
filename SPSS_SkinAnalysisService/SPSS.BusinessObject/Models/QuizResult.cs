@@ -8,37 +8,25 @@ using Microsoft.EntityFrameworkCore;
 
 namespace SPSS.BusinessObject.Models;
 
-[Index("SessionId", Name = "IX_ChatHistories_SessionId")]
-[Index("UserId", Name = "IX_ChatHistories_UserId")]
-public partial class ChatHistory
+[Index("QuizSetId", Name = "IX_QuizResults_QuizSetId")]
+[Index("SkinTypeId", Name = "IX_QuizResults_SkinTypeId")]
+public partial class QuizResult
 {
     [Key]
     public Guid Id { get; set; }
 
-    public Guid UserId { get; set; }
-
-    [Required]
-    public string MessageContent { get; set; }
-
-    [Required]
-    [StringLength(10)]
-    public string SenderType { get; set; }
-
-    public DateTimeOffset Timestamp { get; set; }
-
     [Required]
     [StringLength(100)]
-    public string SessionId { get; set; }
+    public string Score { get; set; }
 
-    [Required]
-    [StringLength(100)]
+    public Guid SkinTypeId { get; set; }
+
+    public Guid? QuizSetId { get; set; }
+
     public string CreatedBy { get; set; }
 
-    [Required]
-    [StringLength(100)]
     public string LastUpdatedBy { get; set; }
 
-    [StringLength(100)]
     public string DeletedBy { get; set; }
 
     public DateTimeOffset? CreatedTime { get; set; }
@@ -49,7 +37,11 @@ public partial class ChatHistory
 
     public bool IsDeleted { get; set; }
 
-    [ForeignKey("UserId")]
-    [InverseProperty("ChatHistories")]
-    public virtual User User { get; set; }
+    [ForeignKey("QuizSetId")]
+    [InverseProperty("QuizResults")]
+    public virtual QuizSet QuizSet { get; set; }
+
+    [ForeignKey("SkinTypeId")]
+    [InverseProperty("QuizResults")]
+    public virtual SkinType SkinType { get; set; }
 }

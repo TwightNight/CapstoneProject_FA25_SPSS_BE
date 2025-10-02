@@ -8,7 +8,6 @@ using Microsoft.EntityFrameworkCore;
 
 namespace SPSS.BusinessObject.Models;
 
-[Index("ParentCategoryId", Name = "IX_ProductCategories_ParentCategoryId")]
 public partial class ProductCategory
 {
     [Key]
@@ -20,16 +19,6 @@ public partial class ProductCategory
     [StringLength(100)]
     public string CategoryName { get; set; }
 
-    [InverseProperty("ParentCategory")]
-    public virtual ICollection<ProductCategory> InverseParentCategory { get; set; } = new List<ProductCategory>();
-
-    [ForeignKey("ParentCategoryId")]
-    [InverseProperty("InverseParentCategory")]
-    public virtual ProductCategory ParentCategory { get; set; }
-
-    [InverseProperty("ProductCategory")]
-    public virtual ICollection<Product> Products { get; set; } = new List<Product>();
-
-    [InverseProperty("ProductCategory")]
-    public virtual ICollection<Variation> Variations { get; set; } = new List<Variation>();
+    [InverseProperty("Category")]
+    public virtual ICollection<SkinTypeRoutineStep> SkinTypeRoutineSteps { get; set; } = new List<SkinTypeRoutineStep>();
 }

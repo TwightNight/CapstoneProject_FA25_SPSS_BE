@@ -22,5 +22,5 @@ public partial class Country
     public string CountryName { get; set; }
 
     [InverseProperty("Country")]
-    public virtual ICollection<Address> Addresses { get; set; } = new List<Address>();
+    public virtual ICollection<Brand> Brands { get; set; } = new List<Brand>();
 }
