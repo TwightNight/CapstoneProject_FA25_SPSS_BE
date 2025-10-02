@@ -12,5 +12,9 @@
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
 	</ItemGroup>
+	<ItemGroup>
+	  <ProjectReference Include="..\SPSS.BusinessObject\SPSS.BusinessObject.csproj" />
+	  <ProjectReference Include="..\SPSS.Shared\SPSS.Shared.csproj" />
+	</ItemGroup>
 
 </Project>
