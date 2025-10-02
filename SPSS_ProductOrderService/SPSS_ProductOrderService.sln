@@ -5,13 +5,13 @@ VisualStudioVersion = 17.13.35931.197
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SPSS.Api", "..\SPSS_SkinAnalysisService\SPSS.Api\SPSS.Api.csproj", "{4562521D-5394-32E8-B310-CBDA25656459}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SPSS.BusinessObject", "..\SPSS_SkinAnalysisService\SPSS.BusinessObject\SPSS.BusinessObject.csproj", "{7FC0C43A-0A0E-D96D-A047-12A5E41B0309}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SPSS.Repository", "..\SPSS_SkinAnalysisService\SPSS.Repository\SPSS.Repository.csproj", "{72B5466A-0AB7-6F7F-EEDC-BB583887D988}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SPSS.Service", "..\SPSS_SkinAnalysisService\SPSS.Service\SPSS.Service.csproj", "{93EAF4C5-79A7-C859-E234-987A30146C8D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SPSS.Shared", "..\SPSS_SkinAnalysisService\SPSS.Shared\SPSS.Shared.csproj", "{A1257D2E-7ED1-6F95-7302-924FBDAAE99E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SPSS.BusinessObject", "SPSS.BusinessObject\SPSS.BusinessObject.csproj", "{B2C672E8-467D-418E-979F-BAA016FC729C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,6 @@ Global
 		{4562521D-5394-32E8-B310-CBDA25656459}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4562521D-5394-32E8-B310-CBDA25656459}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4562521D-5394-32E8-B310-CBDA25656459}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7FC0C43A-0A0E-D96D-A047-12A5E41B0309}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7FC0C43A-0A0E-D96D-A047-12A5E41B0309}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7FC0C43A-0A0E-D96D-A047-12A5E41B0309}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7FC0C43A-0A0E-D96D-A047-12A5E41B0309}.Release|Any CPU.Build.0 = Release|Any CPU
 		{72B5466A-0AB7-6F7F-EEDC-BB583887D988}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{72B5466A-0AB7-6F7F-EEDC-BB583887D988}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{72B5466A-0AB7-6F7F-EEDC-BB583887D988}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -39,6 +35,10 @@ Global
 		{A1257D2E-7ED1-6F95-7302-924FBDAAE99E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A1257D2E-7ED1-6F95-7302-924FBDAAE99E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A1257D2E-7ED1-6F95-7302-924FBDAAE99E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2C672E8-467D-418E-979F-BAA016FC729C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2C672E8-467D-418E-979F-BAA016FC729C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2C672E8-467D-418E-979F-BAA016FC729C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2C672E8-467D-418E-979F-BAA016FC729C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

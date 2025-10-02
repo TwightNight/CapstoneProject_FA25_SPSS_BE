@@ -8,32 +8,24 @@ using Microsoft.EntityFrameworkCore;
 
 namespace SPSS.BusinessObject.Models;
 
-[Index("UserId", Name = "IX_Blogs_UserId")]
-public partial class Blog
+[Index("QuizSetId", Name = "IX_QuizQuestions_QuizSetId")]
+public partial class QuizQuestion
 {
     [Key]
     public Guid Id { get; set; }
 
-    [Required]
-    [StringLength(200)]
-    public string Title { get; set; }
-
-    [Required]
-    public string Description { get; set; }
+    public Guid SetId { get; set; }
 
     [Required]
     [StringLength(500)]
-    public string Thumbnail { get; set; }
+    public string Value { get; set; }
 
-    public Guid UserId { get; set; }
+    public Guid? QuizSetId { get; set; }
 
-    [StringLength(100)]
     public string CreatedBy { get; set; }
 
-    [StringLength(100)]
     public string LastUpdatedBy { get; set; }
 
-    [StringLength(100)]
     public string DeletedBy { get; set; }
 
     public DateTimeOffset? CreatedTime { get; set; }
@@ -44,10 +36,10 @@ public partial class Blog
 
     public bool IsDeleted { get; set; }
 
-    [InverseProperty("Blog")]
-    public virtual ICollection<BlogSection> BlogSections { get; set; } = new List<BlogSection>();
+    [InverseProperty("QuizQuestion")]
+    public virtual ICollection<QuizOption> QuizOptions { get; set; } = new List<QuizOption>();
 
-    [ForeignKey("UserId")]
-    [InverseProperty("Blogs")]
-    public virtual User User { get; set; }
+    [ForeignKey("QuizSetId")]
+    [InverseProperty("QuizQuestions")]
+    public virtual QuizSet QuizSet { get; set; }
 }

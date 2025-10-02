@@ -8,19 +8,24 @@ using Microsoft.EntityFrameworkCore;
 
 namespace SPSS.BusinessObject.Models;
 
-public partial class Role
+[Index("SkinAnalysisResultId", Name = "IX_SkinAnalysisIssues_SkinAnalysisResultId")]
+public partial class SkinAnalysisIssue
 {
     [Key]
-    public Guid RoleId { get; set; }
+    public Guid Id { get; set; }
+
+    public Guid SkinAnalysisResultId { get; set; }
 
     [Required]
     [StringLength(100)]
-    public string RoleName { get; set; }
+    public string IssueName { get; set; }
 
-    [Required]
     [StringLength(500)]
     public string Description { get; set; }
 
-    [InverseProperty("Role")]
-    public virtual ICollection<User> Users { get; set; } = new List<User>();
+    public int Severity { get; set; }
+
+    [ForeignKey("SkinAnalysisResultId")]
+    [InverseProperty("SkinAnalysisIssues")]
+    public virtual SkinAnalysisResult SkinAnalysisResult { get; set; }
 }

@@ -8,22 +8,16 @@ using Microsoft.EntityFrameworkCore;
 
 namespace SPSS.BusinessObject.Models;
 
-[Index("ProductItemId", Name = "IX_Reviews_ProductItemId")]
-[Index("UserId", Name = "IX_Reviews_UserId")]
-public partial class Review
+public partial class QuizSet
 {
     [Key]
     public Guid Id { get; set; }
 
-    public Guid UserId { get; set; }
-
-    public Guid ProductItemId { get; set; }
-
-    public float RatingValue { get; set; }
-
     [Required]
-    [StringLength(2000)]
-    public string Comment { get; set; }
+    [StringLength(200)]
+    public string Name { get; set; }
+
+    public bool IsDefault { get; set; }
 
     public string CreatedBy { get; set; }
 
@@ -39,13 +33,9 @@ public partial class Review
 
     public bool IsDeleted { get; set; }
 
-    [InverseProperty("Review")]
-    public virtual Reply Reply { get; set; }
+    [InverseProperty("QuizSet")]
+    public virtual ICollection<QuizQuestion> QuizQuestions { get; set; } = new List<QuizQuestion>();
 
-    [InverseProperty("Review")]
-    public virtual ICollection<ReviewImage> ReviewImages { get; set; } = new List<ReviewImage>();
-
-    [ForeignKey("UserId")]
-    [InverseProperty("Reviews")]
-    public virtual User User { get; set; }
+    [InverseProperty("QuizSet")]
+    public virtual ICollection<QuizResult> QuizResults { get; set; } = new List<QuizResult>();
 }

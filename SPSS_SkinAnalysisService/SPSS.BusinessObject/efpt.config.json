@@ -1,6 +1,6 @@
 ﻿{
    "CodeGenerationMode": 4,
-   "ContextClassName": "ProductOrderDBContext",
+   "ContextClassName": "SkinAnalysisDBContext",
    "ContextNamespace": null,
    "FilterSchemas": false,
    "IncludeConnectionString": true,
@@ -16,71 +16,47 @@
    "T4TemplatePath": null,
    "Tables": [
       {
-         "Name": "[dbo].[Brands]",
-         "ObjectType": 0
-      },
-      {
-         "Name": "[dbo].[CancelReasons]",
-         "ObjectType": 0
-      },
-      {
-         "Name": "[dbo].[CartItems]",
-         "ObjectType": 0
-      },
-      {
-         "Name": "[dbo].[Countries]",
-         "ObjectType": 0
-      },
-      {
-         "Name": "[dbo].[OrderDetails]",
-         "ObjectType": 0
-      },
-      {
-         "Name": "[dbo].[Orders]",
-         "ObjectType": 0
-      },
-      {
-         "Name": "[dbo].[PaymentMethods]",
-         "ObjectType": 0
-      },
-      {
          "Name": "[dbo].[ProductCategories]",
          "ObjectType": 0
       },
       {
-         "Name": "[dbo].[ProductConfigurations]",
+         "Name": "[dbo].[ProductForSkinTypes]",
          "ObjectType": 0
       },
       {
-         "Name": "[dbo].[ProductImages]",
+         "Name": "[dbo].[QuizOptions]",
          "ObjectType": 0
       },
       {
-         "Name": "[dbo].[ProductItems]",
+         "Name": "[dbo].[QuizQuestions]",
          "ObjectType": 0
       },
       {
-         "Name": "[dbo].[Products]",
+         "Name": "[dbo].[QuizResults]",
          "ObjectType": 0
       },
       {
-         "Name": "[dbo].[ProductStatuses]",
+         "Name": "[dbo].[QuizSets]",
          "ObjectType": 0
       },
       {
-         "Name": "[dbo].[StatusChanges]",
+         "Name": "[dbo].[SkinAnalysisIssues]",
          "ObjectType": 0
       },
       {
-         "Name": "[dbo].[VariationOptions]",
+         "Name": "[dbo].[SkinAnalysisRecommendations]",
          "ObjectType": 0
       },
       {
-         "Name": "[dbo].[Variations]",
+         "Name": "[dbo].[SkinAnalysisResults]",
          "ObjectType": 0
       },
       {
-         "Name": "[dbo].[Vouchers]",
+         "Name": "[dbo].[SkinTypeRoutineSteps]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[SkinTypes]",
          "ObjectType": 0
       }
    ],

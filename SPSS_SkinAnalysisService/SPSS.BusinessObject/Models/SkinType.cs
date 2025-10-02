@@ -22,5 +22,14 @@ public partial class SkinType
     public string Description { get; set; }
 
     [InverseProperty("SkinType")]
-    public virtual ICollection<User> Users { get; set; } = new List<User>();
+    public virtual ICollection<ProductForSkinType> ProductForSkinTypes { get; set; } = new List<ProductForSkinType>();
+
+    [InverseProperty("SkinType")]
+    public virtual ICollection<QuizResult> QuizResults { get; set; } = new List<QuizResult>();
+
+    [InverseProperty("SkinType")]
+    public virtual ICollection<SkinAnalysisResult> SkinAnalysisResults { get; set; } = new List<SkinAnalysisResult>();
+
+    [InverseProperty("SkinType")]
+    public virtual ICollection<SkinTypeRoutineStep> SkinTypeRoutineSteps { get; set; } = new List<SkinTypeRoutineStep>();
 }

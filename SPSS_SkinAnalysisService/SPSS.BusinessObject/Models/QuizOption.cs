@@ -8,20 +8,21 @@ using Microsoft.EntityFrameworkCore;
 
 namespace SPSS.BusinessObject.Models;
 
-[Index("ReviewId", Name = "IX_Replies_ReviewId", IsUnique = true)]
-[Index("UserId", Name = "IX_Replies_UserId")]
-public partial class Reply
+[Index("QuizQuestionId", Name = "IX_QuizOptions_QuizQuestionId")]
+public partial class QuizOption
 {
     [Key]
     public Guid Id { get; set; }
 
-    public Guid? UserId { get; set; }
-
-    public Guid ReviewId { get; set; }
+    public Guid QuestionId { get; set; }
 
     [Required]
-    [StringLength(1000)]
-    public string ReplyContent { get; set; }
+    [StringLength(255)]
+    public string Value { get; set; }
+
+    public int Score { get; set; }
+
+    public Guid? QuizQuestionId { get; set; }
 
     public string CreatedBy { get; set; }
 
@@ -29,7 +30,7 @@ public partial class Reply
 
     public string DeletedBy { get; set; }
 
-    public DateTimeOffset CreatedTime { get; set; }
+    public DateTimeOffset? CreatedTime { get; set; }
 
     public DateTimeOffset? LastUpdatedTime { get; set; }
 
@@ -37,11 +38,7 @@ public partial class Reply
 
     public bool IsDeleted { get; set; }
 
-    [ForeignKey("ReviewId")]
-    [InverseProperty("Reply")]
-    public virtual Review Review { get; set; }
-
-    [ForeignKey("UserId")]
-    [InverseProperty("Replies")]
-    public virtual User User { get; set; }
+    [ForeignKey("QuizQuestionId")]
+    [InverseProperty("QuizOptions")]
+    public virtual QuizQuestion QuizQuestion { get; set; }
 }
