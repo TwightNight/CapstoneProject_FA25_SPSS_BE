@@ -1,13 +1,14 @@
 ﻿using System.Linq.Expressions;
 using Microsoft.EntityFrameworkCore;
+using SPSS.BusinessObject.Context;
 
 namespace SPSS.Shared.Base;
 
 public class RepositoryBase<T, TKey> : IRepositoryBase<T, TKey> where T : class
 {
-    protected readonly DbContext _context;
+    protected readonly SkinAnalysisDBContext _context;
 
-    public RepositoryBase(DbContext context) => _context = context;
+    public RepositoryBase(SkinAnalysisDBContext context) => _context = context;
     public IQueryable<T> GetQueryable()
     {
         return _context.Set<T>().AsQueryable();
