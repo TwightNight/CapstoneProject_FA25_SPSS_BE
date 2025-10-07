@@ -1,0 +1,7 @@
+﻿namespace SPSS.BusinessObject.DTOs.Variation;
+
+public class VariationDto2
+{
+    public Guid Id { get; set; }
+    public string Name { get; set; }
+}

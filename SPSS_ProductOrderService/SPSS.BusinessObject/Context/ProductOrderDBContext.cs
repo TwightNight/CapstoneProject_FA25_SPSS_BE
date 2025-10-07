@@ -44,7 +44,11 @@ public partial class ProductOrderDBContext : DbContext
 
     public virtual DbSet<ProductStatus> ProductStatuses { get; set; }
 
-    public virtual DbSet<StatusChange> StatusChanges { get; set; }
+	public virtual DbSet<SkinType> SkinTypes { get; set; }
+
+	public virtual DbSet<ProductForSkinType> ProductForSkinTypes { get; set; }
+
+	public virtual DbSet<StatusChange> StatusChanges { get; set; }
 
     public virtual DbSet<Variation> Variations { get; set; }
 
@@ -96,7 +100,33 @@ public partial class ProductOrderDBContext : DbContext
             entity.Property(e => e.Id).ValueGeneratedNever();
         });
 
-        modelBuilder.Entity<ProductCategory>(entity =>
+		modelBuilder.Entity<SkinType>(entity =>
+		{
+			entity.Property(e => e.Id).ValueGeneratedNever();
+			entity.Property(e => e.Name).HasMaxLength(255);
+			entity.Property(e => e.Description).HasMaxLength(500);
+		});
+
+		modelBuilder.Entity<ProductForSkinType>(entity =>
+		{
+			entity.Property(e => e.Id).ValueGeneratedNever();
+
+			// Nếu Product class có navigation ICollection<ProductForSkinType> ProductForSkinTypes,
+			// thì dùng WithMany(p => p.ProductForSkinTypes). Nếu không, dùng parameterless WithMany()
+			// để tránh lỗi biên dịch.
+			entity.HasOne(d => d.Product)
+				  .WithMany(p => p.ProductForSkinTypes) // hoặc .WithMany(p => p.ProductForSkinTypes) nếu Product có navigation
+				  .HasForeignKey(d => d.ProductId)
+				  .OnDelete(DeleteBehavior.Cascade);
+
+			entity.HasOne(d => d.SkinType)
+				  .WithMany(p => p.ProductForSkinTypes)
+				  .HasForeignKey(d => d.SkinTypeId)
+				  .OnDelete(DeleteBehavior.Cascade);
+		});
+
+
+		modelBuilder.Entity<ProductCategory>(entity =>
         {
             entity.Property(e => e.Id).ValueGeneratedNever();
         });

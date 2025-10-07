@@ -376,6 +376,26 @@ namespace SPSS.BusinessObject.Migrations
                     b.ToTable("ProductConfigurations");
                 });
 
+            modelBuilder.Entity("SPSS.BusinessObject.Models.ProductForSkinType", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("ProductId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("SkinTypeId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductId");
+
+                    b.HasIndex("SkinTypeId");
+
+                    b.ToTable("ProductForSkinTypes");
+                });
+
             modelBuilder.Entity("SPSS.BusinessObject.Models.ProductImage", b =>
                 {
                     b.Property<Guid>("Id")
@@ -449,6 +469,24 @@ namespace SPSS.BusinessObject.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("ProductStatuses");
+                });
+
+            modelBuilder.Entity("SPSS.BusinessObject.Models.SkinType", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Description")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<string>("Name")
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("SkinTypes");
                 });
 
             modelBuilder.Entity("SPSS.BusinessObject.Models.StatusChange", b =>
@@ -729,6 +767,25 @@ namespace SPSS.BusinessObject.Migrations
                     b.Navigation("VariationOption");
                 });
 
+            modelBuilder.Entity("SPSS.BusinessObject.Models.ProductForSkinType", b =>
+                {
+                    b.HasOne("SPSS.BusinessObject.Models.Product", "Product")
+                        .WithMany("ProductForSkinTypes")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("SPSS.BusinessObject.Models.SkinType", "SkinType")
+                        .WithMany("ProductForSkinTypes")
+                        .HasForeignKey("SkinTypeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Product");
+
+                    b.Navigation("SkinType");
+                });
+
             modelBuilder.Entity("SPSS.BusinessObject.Models.ProductImage", b =>
                 {
                     b.HasOne("SPSS.BusinessObject.Models.Product", "Product")
@@ -811,6 +868,8 @@ namespace SPSS.BusinessObject.Migrations
 
             modelBuilder.Entity("SPSS.BusinessObject.Models.Product", b =>
                 {
+                    b.Navigation("ProductForSkinTypes");
+
                     b.Navigation("ProductImages");
 
                     b.Navigation("ProductItems");
@@ -837,6 +896,11 @@ namespace SPSS.BusinessObject.Migrations
             modelBuilder.Entity("SPSS.BusinessObject.Models.ProductStatus", b =>
                 {
                     b.Navigation("Products");
+                });
+
+            modelBuilder.Entity("SPSS.BusinessObject.Models.SkinType", b =>
+                {
+                    b.Navigation("ProductForSkinTypes");
                 });
 
             modelBuilder.Entity("SPSS.BusinessObject.Models.Variation", b =>
