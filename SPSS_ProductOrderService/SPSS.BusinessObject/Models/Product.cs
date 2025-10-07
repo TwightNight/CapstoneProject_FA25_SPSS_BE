@@ -88,7 +88,9 @@ public partial class Product
     [InverseProperty("Products")]
     public virtual ProductCategory ProductCategory { get; set; }
 
-    [InverseProperty("Product")]
+	public virtual ICollection<ProductForSkinType> ProductForSkinTypes { get; set; } = new List<ProductForSkinType>();
+
+	[InverseProperty("Product")]
     public virtual ICollection<ProductImage> ProductImages { get; set; } = new List<ProductImage>();
 
     [InverseProperty("Product")]
